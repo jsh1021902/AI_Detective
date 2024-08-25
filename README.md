@@ -27,6 +27,7 @@
   Reference : https://m.dt.co.kr/contents.html?article_no=2023050102109931081005
   ```
 <br>
+
 ### 코드 구현을 위한 참고자료
 - 코드 구현을 위한 참고자료는 다음과 같습니다.
   ```text
@@ -35,6 +36,7 @@
   https://github.com/fengliu90/DK-for-TST
   ```
 <br>
+
 ### 참고 문헌
 - 연구 관련 참고 문헌은 다음과 같습니다.
   ```text
