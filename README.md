@@ -47,6 +47,7 @@
   Prafula Dhariwal & Alex Nichol. [“Diffusion Models Beat GANs on Image Synthesis."](https://arxiv.org/abs/2105.05233) arxiv Preprint arxiv:2105.05233 (2021). [[code](https://github.com/openai/guided-diffusion)]
   ```
 <br>
+
 ----
 
 ## 사용 기술
@@ -58,8 +59,6 @@
 
 ### Development
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=Keras&logoColor=white)
-![Tensorflow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
 ![Numpy](https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white)
 ![scikit](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
@@ -68,20 +67,16 @@
 ## 합성데이터의 성능 평가를 위한 통계적 데이터 분석 방법 요약
 - 자세한 코드는 [mnist_분포확인_test.ipynb](https://github.com/jsh1021902/AI_Detective/blob/main/code/mnist_%EB%B6%84%ED%8F%AC%ED%99%95%EC%9D%B8_test.ipynb) 참고
 
-### 전처리 단계
-    - Unsupervised Pre-training
-        - 모델이 다음 토큰을 예측하도록 하나의 문장 데이터를 학습하는 구조
-        - 질문, 답변 문장을 연결하지 않고 학습을 위해 row 방향으로 붙여주었다
-        - 답변에서 중복 문장들이 많았기에 총 19436개의 데이터를 학습하였다
-        - train data의 토큰 길이를 바탕으로 Pre-training에서의 max length는 40으로 설정해줬다
-    - Supervised Fine-tuning
-        - 질문과 답변 데이터를 구분자 토큰과 함께 하나의 시퀀스로 결합
-        - delimiter token 을 추가
-        - Supervised Fine-tuning dataset은 기존 pre-training 방식과 데이터셋이 다르게 들어가야한다
-        - [[start] 질문 [delimiter] 답 [end]] 구조이므로 길이도 좀 더 길게 설정해줘야한다
-        - train data의 토큰 길이를 바탕으로 finetuning에서의 max length는 70으로 설정해줬다
+### 연구의 필요성
+    - 양질의 데이터 부족
+        - 내부 데이터 보안, 저작권, 개인정보 보호, 특수 도메인 라벨러 확보, 데이터 편향성 등의 문제로 양질의 데이터 확보 애로
+    - 롱테일 데이터 부재
+        - 발생하지 않았거나 발생 빈도가 낮은 다수 사건(Long Tail Data) 등 현실에서 구하기 어려운 데이터 존재
+        - 수 많은 데이터들이 존재하지만 실제로 쓸 만한 데이터들이 부족한 풍요속의 빈곤을 해결하기 위해 나온 것이 합성 데이터이다.
+    - 합성 데이터 생성 글로벌 시장 규모 증가
+        - 합성 데이터 생성 글로벌 시장 규모는 2021년 기준 1억 2,330만 달러를 기록했으며 2022년부터 2030년까지 연평균 34.8%로 성장 예상
 
-### 모델 구현 단계
+### 주제 선정 이유
     - GPT는 디코더만으로 구성된 트랜스포머 모델이다
     - Encoder-Decoder Attention 제거 :
         - GPT는 디코더만으로 구성되기 때문에 encoder와 비교하는 encoder-decoder Attention Layer가 필요가 없다.
@@ -115,15 +110,16 @@
   <div markdown="1">
     <li> 배운 점 </li>
       <ul>
-        <li>transformer의 구조에 대해 좀 더 명확히 이해할 수 있었다 </li>
+        <li>t-SNE 알고리즘을 이용하여 2차원으로 축소할 수 있다는 것을 알 수 있었습니다.</li>
         <li>custom 모델 저장하는 방법을 배웠다 </li>
         <li>숫자를 제거하는 전처리 제거만으로도 대답이 확연히 달라지는 것을 볼 수 있었다 </li>
         <li>underfitting 상황을 생각해서 epoch을 높였더니 성능이 향상되었다</li>
       </ul>
     <li> 아쉬운 점 </li>
       <ul>
-        <li>프로젝트에서 한글 토큰을 잘 만들지 못해서 아쉬웠다</li>
-        <li>토큰화를 잘 하지 못해서 띄어쓰기에 따라서 답변이 달라진다</li>
+        <li>검정 방식에서 현재는 Generator가 생성한 합성 데이터를 커널 밀도 추정과 스미르노프 검정, 맨-휘트니 검정으로만 실제 데이터와 비교하였다.</li>
+        <li>추후 연구에서는 two-samples test와 같은 방식과 다른 다양한 검정 방식으로도 비교할 예정이다.</li>
+        <li>위의 연구를 좀 더 해서 검정할 때 좀 더 대표성 있는 데이터로 처리를 한다면 더 정확한 예측이 가능할 것으로 보인다.</li>
       </ul>
     <li> 느낀 점 </li>
       <ul>
@@ -139,8 +135,8 @@
 </details>
 
 ### 결론
-- 직접 Transformer와 GPT를 구현하면서 자세한 구조에 대해서 배울 수 있었습니다
-- 이번 경험을 통해 Transformer, GPT 구조에 대해 잘 알 수 있게 되었습니다
+- 커널 밀도 추정 과정에서는 합성데이터의 경계가 모호한데, 이는 해당 데이터를 학습함으로써 추후 복잡한 데이터를 학습하거나 새로운 데이터를 예측할 때 성능을 높일 가능성이 있습니다.
+- 이는 현재 딥러닝 모델의 Overconfidence 문제를 해결하여 값을 구분하는 경계를 부드럽게 하는 역할을 할 수 있습니다​.
 <br>
 
 ---
