@@ -42,20 +42,11 @@
 ### 참고 문헌
 - 연구 관련 참고 문헌은 다음과 같습니다.
   ```text
-  - (DCGAN) Alec Radford, Luke Metz, and Soumith Chintala. Unsupervised
-Representation Learning with Deep Convolutional Generative
-Adversarial Networks. In ICLR, 2016.
-
-- Sam Bond-Taylor, Adam Leach, Yang Long, Chris G. Willcocks “Deep Generative Modelling: A Comparative
-Review of VAEs, GANs, Normalizing Flows,
-Energy-Based and Autoregressive Models”
-
-- Constructing and Visualizing High-Quality Classifier Decision Boundary Maps dagger (https://pure.rug.nl/ws/portalfiles/portal/118190644/information_10_00280.pdf)
-
-- Yang Song & Stefano Ermon. [“Generative modeling by estimating gradients of the data distribution.”](https://arxiv.org/abs/1907.05600) NeurIPS 2019.
-
-- Prafula Dhariwal & Alex Nichol. [“Diffusion Models Beat GANs on Image Synthesis."](https://arxiv.org/abs/2105.05233) arxiv Preprint arxiv:2105.05233 (2021). [[code](https://github.com/openai/guided-diffusion)]
-![image](https://github.com/user-attachments/assets/4f389225-1505-46df-9154-d99d0252734b)
+  (DCGAN) Alec Radford, Luke Metz, and Soumith Chintala. Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks. In ICLR, 2016.
+  Sam Bond-Taylor, Adam Leach, Yang Long, Chris G. Willcocks “Deep Generative Modelling: A Comparative Review of VAEs, GANs, Normalizing Flows, Energy-Based and Autoregressive Models”
+  Constructing and Visualizing High-Quality Classifier Decision Boundary Maps dagger (https://pure.rug.nl/ws/portalfiles/portal/118190644/information_10_00280.pdf)
+  Yang Song & Stefano Ermon. [“Generative modeling by estimating gradients of the data distribution.”](https://arxiv.org/abs/1907.05600) NeurIPS 2019.
+  Prafula Dhariwal & Alex Nichol. [“Diffusion Models Beat GANs on Image Synthesis."](https://arxiv.org/abs/2105.05233) arxiv Preprint arxiv:2105.05233 (2021). [[code](https://github.com/openai/guided-diffusion)]
   ```
 <br>
 
