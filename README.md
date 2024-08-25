@@ -76,6 +76,7 @@
     - 합성 데이터 생성 글로벌 시장 규모 증가
         - 합성 데이터 생성 글로벌 시장 규모는 2021년 기준 1억 2,330만 달러를 기록했으며 2022년부터 2030년까지 연평균 34.8%로 성장 예상
 <img src="https://github.com/user-attachments/assets/55268b13-d89f-4b6c-aeeb-5b3ba839b87c" width="600" />
+<img src="https://github.com/user-attachments/assets/76195089-4c39-4580-9c6d-1e735b4e8531" width="600" />
 
 
 ### 주제 선정 이유
