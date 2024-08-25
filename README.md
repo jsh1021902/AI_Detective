@@ -80,27 +80,7 @@
 
 
 ### 주제 선정 이유
-    - GPT는 디코더만으로 구성된 트랜스포머 모델이다
-    - Encoder-Decoder Attention 제거 :
-        - GPT는 디코더만으로 구성되기 때문에 encoder와 비교하는 encoder-decoder Attention Layer가 필요가 없다.
-        - 기존 코드에서 두 번째 서브 레이어를 제거한다
-        ---------------------------------------------------------------------------------------
-                attention2 = MultiHeadAttention(
-                    d_model, num_heads, name="attention_2")(inputs={
-                          'query': attention1,
-                          'key': enc_outputs,
-                          'value': enc_outputs,
-                          'mask': padding_mask
-                      })
-
-                # 마스크드 멀티 헤드 어텐션의 결과는
-                # Dropout과 LayerNormalization이라는 훈련을 돕는 테크닉을 수행
-                attention2 = tf.keras.layers.Dropout(rate=dropout)(attention2)
-                attention2 = tf.keras.layers.LayerNormalization(
-                  epsilon=1e-6)(attention2 + attention1)
-       -----------------------------------------------------------------------------------------
-    - 인코더 출력 제거 : encoder_outputs 제거
-    - 마스킹 방식 : padding mask 제거, look_ahead_mask 만 사용하면됨
+    - 
 
 <br>
 
@@ -109,30 +89,17 @@
 ---
 ### 회고
 <details>
-  <summary><b>Transformer 구현 회고</b></summary>
+  <summary><b>구현 회고</b></summary>
   <div markdown="1">
     <li> 배운 점 </li>
       <ul>
         <li>t-SNE 알고리즘을 이용하여 2차원으로 축소할 수 있다는 것을 알 수 있었습니다.</li>
-        <li>custom 모델 저장하는 방법을 배웠다 </li>
-        <li>숫자를 제거하는 전처리 제거만으로도 대답이 확연히 달라지는 것을 볼 수 있었다 </li>
-        <li>underfitting 상황을 생각해서 epoch을 높였더니 성능이 향상되었다</li>
       </ul>
     <li> 아쉬운 점 </li>
       <ul>
         <li>검정 방식에서 현재는 Generator가 생성한 합성 데이터를 커널 밀도 추정과 스미르노프 검정, 맨-휘트니 검정으로만 실제 데이터와 비교하였다.</li>
         <li>추후 연구에서는 two-samples test와 같은 방식과 다른 다양한 검정 방식으로도 비교할 예정이다.</li>
         <li>위의 연구를 좀 더 해서 검정할 때 좀 더 대표성 있는 데이터로 처리를 한다면 더 정확한 예측이 가능할 것으로 보인다.</li>
-      </ul>
-    <li> 느낀 점 </li>
-      <ul>
-        <li>어려운 개념이라도 노력하면 이해할 수 있다는 것을 느꼈다</li>
-        <li>챗봇도 결국 어떤 데이터를 학습하냐에 따라 대답이 달라진다</li>
-      </ul>
-    <li> 어려웠던 점 </li>
-      <ul>
-        <li>transformer의 구조를 이해하는데 어려웠다</li>
-        <li>custom 모델 저장하는 데 config 설정하는 것이 어려웠다</li>
       </ul>
   </div>
 </details>
