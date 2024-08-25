@@ -21,22 +21,42 @@
 
 
 
-### 데이터셋 출처
-- chatbot 데이터 출처는 아래 데이터를 사용했습니다
+### 연구 관련 자료 조사
+- 연구 관련 자료 조사는 다음과 같습니다.
   ```text
-  Youngsook Song.(2018). Chatbot_data_for_Korean v1.0)[Online].
-  Available : https://github.com/songys/Chatbot_data (downloaded 2022. June. 29.)
+  Reference : https://m.dt.co.kr/contents.html?article_no=2023050102109931081005
   ```
 <br>
 
-## 사용 용도
-- [korean-chatbot-Transformer.ipynb](korean-chatbot-Transformer.ipynb)
-  - Transformer에 대한 자세한 구조를 코드를 통해 확인해보고 싶다면 이 코드를 통해 학습할 수 있습니다
-  - 또한, 이 파일에는 custom model을 저장하는 코드가 추가되어 있습니다
-  - learning rate, model 구조를 customize 했을 때 어떻게 모델을 저장하고 불러오는지 참고하기 좋을 것 같습니다
-- [korean-chatbot-GPT.ipynb](korean-chatbot-GPT.ipynb)
-  - 위 transformer notebook을 보고 GPT를 이해하고 싶다면 이 파일을 통해 쉽게 이해할 수 있을 것입니다
 
+### 코드 구현을 위한 참고자료
+- 코드 구현을 위한 참고자료는 다음과 같습니다.
+  ```text
+  Reference : Fourier Features Let Networks LearnHigh Frequency Functions in Low Dimensional Domains (https://bmild.github.io/fourfeat/)
+  https://pseudo-lab.github.io/Tutorial-Book/chapters/GAN/Ch2-EDA.html
+  https://github.com/fengliu90/DK-for-TST
+  ```
+<br>
+
+
+### 참고 문헌
+- 연구 관련 참고 문헌은 다음과 같습니다.
+  ```text
+  - (DCGAN) Alec Radford, Luke Metz, and Soumith Chintala. Unsupervised
+Representation Learning with Deep Convolutional Generative
+Adversarial Networks. In ICLR, 2016.
+
+- Sam Bond-Taylor, Adam Leach, Yang Long, Chris G. Willcocks “Deep Generative Modelling: A Comparative
+Review of VAEs, GANs, Normalizing Flows,
+Energy-Based and Autoregressive Models”
+
+- Constructing and Visualizing High-Quality Classifier Decision Boundary Maps dagger (https://pure.rug.nl/ws/portalfiles/portal/118190644/information_10_00280.pdf)
+
+- Yang Song & Stefano Ermon. [“Generative modeling by estimating gradients of the data distribution.”](https://arxiv.org/abs/1907.05600) NeurIPS 2019.
+
+- Prafula Dhariwal & Alex Nichol. [“Diffusion Models Beat GANs on Image Synthesis."](https://arxiv.org/abs/2105.05233) arxiv Preprint arxiv:2105.05233 (2021). [[code](https://github.com/openai/guided-diffusion)]
+![image](https://github.com/user-attachments/assets/4f389225-1505-46df-9154-d99d0252734b)
+  ```
 <br>
 
 ----
@@ -57,8 +77,8 @@
 ![scikit](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 <br>
 ----
-## Transformer 에서 GPT로의 변경 사항 요약
-- 자세한 코드는 [korean-chatbot-GPT.ipynb](korean-chatbot-GPT.ipynb) 참고
+## 합성데이터의 성능 평가를 위한 통계적 데이터 분석 방법 요약
+- 자세한 코드는 [mnist_분포확인_test.ipynb](https://github.com/jsh1021902/AI_Detective/blob/main/code/mnist_%EB%B6%84%ED%8F%AC%ED%99%95%EC%9D%B8_test.ipynb) 참고
 
 ### 전처리 단계
     - Unsupervised Pre-training
